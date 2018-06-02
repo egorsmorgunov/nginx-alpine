@@ -17,8 +17,6 @@ RUN GPG_KEYS=B0F4253373F8F6F510D42178520A9993A1C052F8 \
 		--http-client-body-temp-path=/var/cache/nginx/client_temp \
 		--http-proxy-temp-path=/var/cache/nginx/proxy_temp \
 		--http-fastcgi-temp-path=/var/cache/nginx/fastcgi_temp \
-		--http-uwsgi-temp-path=/var/cache/nginx/uwsgi_temp \
-		
 		--user=nginx \
 		--group=nginx \
 		--with-http_ssl_module \
@@ -105,7 +103,11 @@ RUN GPG_KEYS=B0F4253373F8F6F510D42178520A9993A1C052F8 \
 	\
 	# forward request and error logs to docker log collector
 	&& ln -sf /dev/stdout /var/log/nginx/access.log \
-	&& ln -sf /dev/stderr /var/log/nginx/error.log
+	&& ln -sf /dev/stderr /var/log/nginx/error.log \
+	\
+	# rm all trash
+	rm -Rfv /mnt /media /etc/nginx/fastscgi.conf.default /etc/nginx/fastscgi_params.default /etc/nginx/scgi_temp \
+	rm -Rfv /etc/nginx/mime.types.default /etc/nginx/nginx.conf.default /etc/nginx/scgi_params.default /etc/nginx/uwsgi_params.default \
 
 #COPY nginx.conf /etc/nginx/nginx.conf
 #COPY nginx.vh.default.conf /etc/nginx/conf.d/default.conf
