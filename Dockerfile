@@ -105,9 +105,9 @@ RUN GPG_KEYS=B0F4253373F8F6F510D42178520A9993A1C052F8 \
 	&& ln -sf /dev/stdout /var/log/nginx/access.log \
 	&& ln -sf /dev/stderr /var/log/nginx/error.log \
 	# rm all trash
-	&& rm -Rfv /mnt /media /etc/nginx/fastcgi.conf.default /etc/nginx/fastcgi_params.default /etc/nginx/scgi_temp \
-	&& rm -Rfv /etc/nginx/mime.types.default /etc/nginx/nginx.conf.default /etc/nginx/scgi_params.default /etc/nginx/uwsgi_params.default
-
+	&& rm -Rfv /mnt /media /etc/nginx/fastcgi.conf.default /etc/nginx/fastcgi_params.default \
+	&& rm -Rfv /etc/nginx/mime.types.default /etc/nginx/nginx.conf.default /etc/nginx/scgi_params.default 
+	&& rm -Rfv /etc/nginx/uwsgi_params.default /etc/nginx/scgi_params /etc/nginx/uwsgi_params /etc/nginx/scgi_temp 
 #COPY nginx.conf /etc/nginx/nginx.conf
 #COPY nginx.vh.default.conf /etc/nginx/conf.d/default.conf
 
