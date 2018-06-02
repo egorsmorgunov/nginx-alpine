@@ -18,7 +18,7 @@ RUN GPG_KEYS=B0F4253373F8F6F510D42178520A9993A1C052F8 \
 		--http-proxy-temp-path=/var/cache/nginx/proxy_temp \
 		--http-fastcgi-temp-path=/var/cache/nginx/fastcgi_temp \
 		--http-uwsgi-temp-path=/var/cache/nginx/uwsgi_temp \
-		--http-scgi-temp-path=/var/cache/nginx/scgi_temp \
+		
 		--user=nginx \
 		--group=nginx \
 		--with-http_ssl_module \
