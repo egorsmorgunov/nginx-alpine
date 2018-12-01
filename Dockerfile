@@ -110,6 +110,7 @@ RUN GPG_KEYS=B0F4253373F8F6F510D42178520A9993A1C052F8 \
 	&& rm -Rfv /etc/nginx/uwsgi_params.default /etc/nginx/scgi_params /etc/nginx/uwsgi_params 
 ADD nginx.conf /etc/nginx/
 ADD default.conf /etc/nginx/conf.d/
+COPY phpmyadmin /var/www/phpmyadmin/
 
 EXPOSE 80
 EXPOSE 443
