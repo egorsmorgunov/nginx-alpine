@@ -37,7 +37,6 @@ RUN GPG_KEYS=B0F4253373F8F6F510D42178520A9993A1C052F8 \
 		libc-dev \
 		make \
 		openssl-dev \
-		openssl \
 		pcre-dev \
 		zlib-dev \
 		linux-headers \
@@ -100,7 +99,7 @@ RUN GPG_KEYS=B0F4253373F8F6F510D42178520A9993A1C052F8 \
 	\
 	# Bring in tzdata so users could set the timezones through the environment
 	# variables
-	&& apk add --no-cache tzdata \
+	&& apk add --no-cache tzdata openssl \
 	\
 	# forward request and error logs to docker log collector
 	&& ln -sf /dev/stdout /var/log/nginx/access.log \
