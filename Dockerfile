@@ -99,7 +99,7 @@ RUN GPG_KEYS=B0F4253373F8F6F510D42178520A9993A1C052F8 \
 	\
 	# Bring in tzdata so users could set the timezones through the environment
 	# variables
-	&& apk add --no-cache tzdata openssl \
+	&& apk add --no-cache tzdata \
 	\
 	# forward request and error logs to docker log collector
 	&& ln -sf /dev/stdout /var/log/nginx/access.log \
@@ -107,7 +107,8 @@ RUN GPG_KEYS=B0F4253373F8F6F510D42178520A9993A1C052F8 \
 	# rm all trash
 	&& rm -Rfv /mnt /media /etc/nginx/fastcgi.conf.default /etc/nginx/fastcgi_params.default \
 	&& rm -Rfv /etc/nginx/mime.types.default /etc/nginx/nginx.conf.default /etc/nginx/scgi_params.default \
-	&& rm -Rfv /etc/nginx/uwsgi_params.default /etc/nginx/scgi_params /etc/nginx/uwsgi_params 
+	&& rm -Rfv /etc/nginx/uwsgi_params.default /etc/nginx/scgi_params /etc/nginx/uwsgi_params
+RUN apk add openssl
 ADD nginx.conf /etc/nginx/
 ADD default.conf /etc/nginx/conf.d/
 COPY phpmyadmin /var/www/phpmyadmin/
