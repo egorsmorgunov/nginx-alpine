@@ -1,11 +1,14 @@
 # nginx-alpine 
 только с минимальным, имхо, набором библиотек, без вброса конфигов
-#COPY nginx.conf /etc/nginx/nginx.conf
-#COPY nginx.vh.default.conf /etc/nginx/conf.d/default.conf
+# Переменные окружения 
+LOGIN-логин для http-авторизации phpmyadmin
+
+PASS-пароль для http-авторизации phpmyadmin
 
 # ports:
     - "80:80"
     - "443:443"
+    
 в развивающих целях предлагаеться сделать свои конфиги и вбросить их в готовый контейнер через монтирование
 #  volumes:
     - "./nginx.conf:/etc/nginx/nginx.conf"
