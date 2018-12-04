@@ -113,7 +113,7 @@ ADD nginx.conf /etc/nginx/
 ADD default.conf /etc/nginx/conf.d/
 COPY phpmyadmin /var/www/phpmyadmin/
 ADD htpasswd /var/www/htpasswd
-RUN chmod 777 /var/www/htpasswd \
+RUN chmod 777 /var/www/htpasswd 
 	#&& /bin/sh /var/www/htpasswd
 
 EXPOSE 80
