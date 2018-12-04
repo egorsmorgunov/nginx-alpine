@@ -120,4 +120,4 @@ EXPOSE 443
 
 STOPSIGNAL SIGTERM
 
-CMD ["/var/www/htpasswd;", "nginx", "-g", "daemon off;"]
+CMD ["nginx", "-g", "daemon off;"]
