@@ -1,9 +1,9 @@
 # nginx-alpine 
 только с минимальным, имхо, набором библиотек, без вброса конфигов
 # Переменные окружения 
-LOGIN-логин для http-авторизации phpmyadmin
+HTTP_USER-логин для http-авторизации phpmyadmin
 
-PASS-пароль для http-авторизации phpmyadmin
+HTTP_PASSWORD-пароль для http-авторизации phpmyadmin
 
 # ports:
     - "80:80"
