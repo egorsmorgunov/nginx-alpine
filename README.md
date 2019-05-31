@@ -1,19 +1,19 @@
-# nginx-alpine 
+### nginx-alpine 
 только с минимальным, имхо, набором библиотек, без вброса конфигов
-# Переменные окружения 
+### Переменные окружения 
 HTTP_USER-логин для http-авторизации phpmyadmin
 
 HTTP_PASSWORD-пароль для http-авторизации phpmyadmin
 
-# ports:
+### ports:
     - "80:80"
     - "443:443"
     
 в развивающих целях предлагаеться сделать свои конфиги и вбросить их в готовый контейнер через монтирование
-#  volumes:
+###  volumes:
     - "./nginx.conf:/etc/nginx/nginx.conf"
     - "./default.conf:/etc/nginx/conf.d/default.conf"
-# Для windows:
+### Для windows:
     - "/c/Users/user/nginx.conf:/etc/nginx/nginx.conf"
     - "/c/Users/user/default.conf:/etc/nginx/conf.d/default.conf"
 , где /c/Users/user/ - папка видимая на виртуальной машине!!! (VM), где **192.168.99.100** - адрес VM по-умолчанию
