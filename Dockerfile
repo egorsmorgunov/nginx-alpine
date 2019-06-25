@@ -108,7 +108,7 @@ RUN GPG_KEYS=B0F4253373F8F6F510D42178520A9993A1C052F8 \
 	&& rm -Rfv /mnt /media /etc/nginx/fastcgi.conf.default /etc/nginx/fastcgi_params.default \
 	&& rm -Rfv /etc/nginx/mime.types.default /etc/nginx/nginx.conf.default /etc/nginx/scgi_params.default \
 	&& rm -Rfv /etc/nginx/uwsgi_params.default /etc/nginx/scgi_params /etc/nginx/uwsgi_params
-RUN apk add openssl 
+RUN apk add openssl mc
 ADD nginx.conf /etc/nginx/
 VOLUME /etc/nginx/conf.d/
 COPY phpmyadmin /var/www/phpmyadmin/
