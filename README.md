@@ -15,7 +15,9 @@ HTTP_PASSWORD-пароль для http-авторизации phpmyadmin, theia
 
     #конфиг nginx servers and locations
     - "/www/middlearth/conf.d/:/etc/nginx/conf.d/"
-    - "/www/middlearth/html/:/var/www/html/" фалы
+    #файлы проекта
+    - "/www/middlearth/html/:/var/www/html/"
+    #файлы старого проекта
     - "/www/middlearth/old/:/var/www/old/"
 НЕобязательные:
     
