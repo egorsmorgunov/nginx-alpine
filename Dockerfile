@@ -111,7 +111,7 @@ RUN GPG_KEYS=B0F4253373F8F6F510D42178520A9993A1C052F8 \
 RUN apk add openssl mc
 ADD nginx.conf /etc/nginx/
 VOLUME /etc/nginx/conf.d/
-COPY phpmyadmin /var/www/phpmyadmin/
+#COPY phpmyadmin /var/www/phpmyadmin/
 ADD htpasswd /var/www/htpasswd
 RUN chmod 777 /var/www/htpasswd 
 
@@ -121,4 +121,3 @@ EXPOSE 443
 STOPSIGNAL SIGTERM
 
 CMD ["nginx", "-g", "daemon off;"]
-
