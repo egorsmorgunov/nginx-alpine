@@ -1,6 +1,8 @@
-# nginx-alpine 
-только с минимальным, имхо, набором библиотек, без вброса конфигов
+# nginx-alpine from nginx 1.14
+! только с минимальным набором библиотек, без вброса конфигов
+
 #COPY nginx.conf /etc/nginx/nginx.conf
+
 #COPY nginx.vh.default.conf /etc/nginx/conf.d/default.conf
 
 # ports:
