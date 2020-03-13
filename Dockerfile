@@ -109,7 +109,6 @@ RUN GPG_KEYS=B0F4253373F8F6F510D42178520A9993A1C052F8 \
 	&& rm -Rfv /etc/nginx/mime.types.default /etc/nginx/nginx.conf.default /etc/nginx/scgi_params.default \
 	&& rm -Rfv /etc/nginx/uwsgi_params.default /etc/nginx/scgi_params /etc/nginx/uwsgi_params
 
-
 ADD default.conf /etc/nginx/conf.d/
 ADD nginx.conf /etc/nginx/
 RUN mkdir -p /var/www/html
@@ -121,4 +120,3 @@ EXPOSE 80
 STOPSIGNAL SIGTERM
 
 CMD ["nginx", "-g", "daemon off;"]
-
