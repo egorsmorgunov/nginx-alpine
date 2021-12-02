@@ -23,7 +23,8 @@ HTTP_PASSWORD-пароль для http-авторизации phpmyadmin, theia
     
     - "/www/cert/fullchain.crt:/etc/ssl/fullchain.crt"
     - "/www/cert/privkey.key:/etc/ssl/privkey.key"
-    
+    - "/www/middlearth/phpmyadmin/:/var/www/phpmyadmin/"
+!!phpmyadmin не вкидывается в образ, вкидывайте через том
 #### /conf.d/
 
     /default.conf
